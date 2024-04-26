@@ -163,7 +163,7 @@ The basic idea behind QuickSort is to select a pivot element from the array and 
 
 ### Step-by-step explanation of the QuickSort algorithm:
 
-We will continue with our array of numbers from previous explanations. Let's say we want to sort the following array of numbers in ascending order: 8, 6, 10, 4, 2.  5,3,8,2,1
+We will continue with our array of numbers from previous explanations. Let's say we want to sort the following array of numbers in ascending order: 8, 6, 10, 4, 2. 
 
 - Choose a pivot: Select an element from the array to serve as the pivot. The choice of the pivot can affect the performance of the algorithm, but a common approach is to select the last element of the array. In our array the last element is 2.
 
@@ -186,8 +186,7 @@ Choose a pivot (10).
 Partition the sub-array around the pivot (10): 8, 10,
 
 - Combining the sub-arrays: As the recursion unwinds, the sub-arrays are combined back to obtain the final sorted array. 
-Since both sub-arrays are now sorted, we combine them with the pivot to get the final sorted array: 4,6,8,10,2
-
+Since both sub-arrays are now sorted, we combine them with the pivot to get the final sorted array: 4, 6, 8, 10, 2.
 
 - Repeat: We repeat the process recursively for each sub-array until the entire array is sorted.
 For the left sub-array: 4, 6
