@@ -3,7 +3,7 @@
 ## Sorting
 
 Sorting is the process of putting things in order. 
-It could be re-arranging numbers, words, 
+It involves rearranging numbers, words, or any other type of data to make it easier to find whatever you want.  
  
 Sorting is the process of arranging things in a specific order, mostly following a certain criterion such as numerical order, or alphabetical order.
 
