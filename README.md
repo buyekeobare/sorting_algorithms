@@ -4,8 +4,6 @@
 
 Sorting is the process of putting things in order. 
 It involves rearranging numbers, words, or any other type of data to make it easier to find whatever you want.  
- 
-Sorting is the process of arranging things in a specific order, mostly following a certain criterion such as numerical order, or alphabetical order.
 
 The primary goal of sorting is to make data easier to search, analyze, and manipulate. 
 By organizing elements in a specific order, we can efficiently perform tasks like searching for specific values, finding the minimum or maximum element, identifying duplicates, and more.
