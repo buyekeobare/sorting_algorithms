@@ -232,7 +232,7 @@ This gradually builds up the sorted subarray until the entire array is sorted.
 
 ### Step-by-step explanation of how Selection Sort works:
 
-We will continue with our example of array of numbers that we want to sort in ascending order: 8, 6, 10, 4, 2.   5,3,8,2,1
+We will continue with our example of array of numbers that we want to sort in ascending order: 8, 6, 10, 4, 2.
 
 1. We start with the entire array considered as the unsorted subarray.
 - Find the Minimum: We search the unsorted subarray for the smallest element and swap it with the first element of the array.
