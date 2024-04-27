@@ -64,7 +64,28 @@ Big O notation is written as O(f(n)), where:
  
 And many more.
 
-For our tasks, we will focus on Bubble Sort, Insertion Sort, and Quick Sort. Lets learn more about them.
+## Project tasks
+
+For this project we will focus on some of the sorting algorithms as outlined below:
+
+### Mandatory tasks:
+
+- Bubble Sort
+- Insertion Sort
+- Selection Sort
+- Quick Sort
+
+### Advanced tasks:
+
+- Merge Sort
+- Counting Sort
+- Cocktail Sort
+- Shell Sort
+- Heap Sort
+- Radix Sort
+- Bitonic Sort
+
+Lets explore the mandatory tasks
 
 ## Bubble Sort
 
@@ -72,39 +93,40 @@ Bubble sort is a simple sorting algorithm that repeatedly steps through a list o
 
 ### Step-by-step explanation of how bubble sort works:
 
-- Start with an unsorted list of elements. For exmaple, we want to sort an array of numbers in ascending order: 8, 6, 10, 4, 2.
+1. Start with an unsorted list of elements. For exmaple, we want to sort an array of numbers in ascending order: 8, 6, 10, 4, 2.
 
-Compare the first element with the second elements (8 and 6). 
-If the first element is greater than the second element, swap them. In our example, since 6 is smaller than 8, we swap them. Current order: 6, 8, 10, 4, 2.
-Move to the next pair of elements (the second and the third i.e 8 and 10) and compare them. 
+- Compare the first element with the second elements (8 and 6). 
+If the first element is greater than the second element, swap them. 
+In our example, since 6 is smaller than 8, we swap them. Current order: 6, 8, 10, 4, 2.
+- Move to the next pair of elements (the second and the third i.e 8 and 10) and compare them. 
 Again, swap them if they are in the wrong order, but in our case we don't swap them since they are in the correct order. Current order: 6, 8, 10, 4, 2.
-Next, we compare 10 and 4. Since 4 is smaller than 10, we swap them. Current order: 6, 8, 4, 10, 2.
-Finally, we compare 10 and 2. We swap them because 2 is smaller than 10. Current order: 6, 8, 4, 2, 10.
+- Next, we compare 10 and 4. Since 4 is smaller than 10, we swap them. Current order: 6, 8, 4, 10, 2.
+- Finally, we compare 10 and 2. We swap them because 2 is smaller than 10. Current order: 6, 8, 4, 2, 10.
 
 After the first pass, the largest element (10) is in its correct position at the end of the array.
 
-- We repeat the same process for the remaining unsorted elements. 
+2. We repeat the same process for the remaining unsorted elements. 
 
-Compare 6 and 8. They are already in order, so no swap is needed. Current order: 6, 8, 4, 2, 10.
-Compare 8 and 4. We swap them because 4 is smaller than 8. Current order: 6, 4, 8, 2, 10.
-Compare 8 and 2. We swap them because 2 is smaller than 8. Current order: 6, 4, 2, 8, 10.
+- Compare 6 and 8. They are already in order, so no swap is needed. Current order: 6, 8, 4, 2, 10.
+- Compare 8 and 4. We swap them because 4 is smaller than 8. Current order: 6, 4, 8, 2, 10.
+- Compare 8 and 2. We swap them because 2 is smaller than 8. Current order: 6, 4, 2, 8, 10.
 
 After the second pass, the second largest element (8) is in its correct position.
 
-- We continue the process for the remaining unsorted elements for the third pass.
+3. We continue the process for the remaining unsorted elements for the third pass.
 
-Compare 6 and 4. We swap them because 4 is smaller than 6. Current order: 4, 6, 2, 8, 10
-Compare 6 and 2. We swap them because 2 is smaller than 6. Current order: 4, 2, 6, 8, 10
+- Compare 6 and 4. We swap them because 4 is smaller than 6. Current order: 4, 6, 2, 8, 10
+- Compare 6 and 2. We swap them because 2 is smaller than 6. Current order: 4, 2, 6, 8, 10
 
 After the third pass, the third largest element (6) is in its correct position.
 
-- Repeat the process for the fourth pass.
+4. Repeat the process for the fourth pass.
 
-Compare 4 and 2. We swap them because 2 is smaller than 4. Current order: 2, 4, 6, 8, 10.
+- Compare 4 and 2. We swap them because 2 is smaller than 4. Current order: 2, 4, 6, 8, 10.
 
 After the fourth pass, the fourth largest element (4) is in its correct position.
 
-- Repeat the process for the final pass.
+5. Repeat the process for the final pass.
 
 No swaps are needed because 2 is already in its correct position.
 
@@ -122,32 +144,32 @@ Insertion Sort is a simple comparison-based sorting algorithm that builds the fi
 
 Just like we did in bubble sort sorting algorithm, let's assume we want to sort an array of numbers in ascending order: 8, 6, 10, 4, 2.
 
-- Start with the second element (index 1) of the array and consider it as the "key" to be inserted into the sorted portion of the array.
+1. Start with the second element (index 1) of the array and consider it as the "key" to be inserted into the sorted portion of the array.
 
-Our second element or index 1 of the array is (6). 
-We compare it with the elements to its left and move it to its correct position among the sorted elements.
-Since 6 is smaller than 8, we shift 6 one position to the right. Current order: 6, 8, 10, 4, 2.
+- Our second element or index 1 of the array is (6). 
+- We compare it with the elements to its left and move it to its correct position among the sorted elements.
+- Since 6 is smaller than 8, we shift 6 one position to the right. Current order: 6, 8, 10, 4, 2.
 
-- Next, start from the third element (Index 2 of the array). 
+2. Next, start from the third element (Index 2 of the array). 
 
-Our third element is 10. Insert it into its correct position among the sorted elements (6, 8).
-10 is greater than 8, so it remains in its position. Current order: 6, 8, 10, 4, 2.
+- Our third element is 10. Insert it into its correct position among the sorted elements (6, 8).
+- 10 is greater than 8, so it remains in its position. Current order: 6, 8, 10, 4, 2.
 
-- Then, start from the fourth element (Index 3 of the array)
+3. Then, start from the fourth element (Index 3 of the array)
 
-We consider the fourth element (4) and insert it into its correct position among the sorted elements (6, 8, 10).
-4 is smaller than 10, so we shift 10 one position to the right. 
-4 is smaller than 8, so we shift 8 one position to the right. 
-Finally, we insert 4 in its correct position. Current order: 4, 6, 8, 10, 2.
+- We consider the fourth element (4) and insert it into its correct position among the sorted elements (6, 8, 10).
+- 4 is smaller than 10, so we shift 10 one position to the right. 
+- 4 is smaller than 8, so we shift 8 one position to the right. 
+- Finally, we insert 4 in its correct position. Current order: 4, 6, 8, 10, 2.
 
-- For the fourth pass, we start from the fifth element (Index 4 of the array).
-Our fifth element is 2.
+4. For the fourth pass, we start from the fifth element (Index 4 of the array).
 
-Insert it into its correct position among the sorted elements (4, 6, 8, 10).
-2 is smaller than 10, so we shift 10 one position to the right.
-2 is smaller than 8, so we shift 8 one position to the right.
-2 is smaller than 6, so we shift 6 one position to the right. 
-Finally, we insert 2 in its correct position. Current order: 2, 4, 6, 8, 10
+- Our fifth element is 2.
+- Insert it into its correct position among the sorted elements (4, 6, 8, 10).
+- 2 is smaller than 10, so we shift 10 one position to the right.
+- 2 is smaller than 8, so we shift 8 one position to the right.
+- 2 is smaller than 6, so we shift 6 one position to the right. 
+- Finally, we insert 2 in its correct position. Current order: 2, 4, 6, 8, 10
 
 After the fourth pass, the entire array is sorted.
 
@@ -165,32 +187,36 @@ The basic idea behind QuickSort is to select a pivot element from the array and 
 
 We will continue with our array of numbers from previous explanations. Let's say we want to sort the following array of numbers in ascending order: 8, 6, 10, 4, 2. 
 
-- Choose a pivot: Select an element from the array to serve as the pivot. The choice of the pivot can affect the performance of the algorithm, but a common approach is to select the last element of the array. In our array the last element is 2.
+1. Choose a pivot: Select an element from the array to serve as the pivot. 
+The choice of the pivot can affect the performance of the algorithm, but a common approach is to select the last element of the array. In our array the last element is 2.
 
-- Partitioning: Rearrange the array in such a way that all elements less than the pivot are moved to the left side of the pivot, and all elements greater than the pivot are moved to the right side. The pivot itself will be in its final sorted position. 
+2. Partitioning: Rearrange the array in such a way that all elements less than the pivot are moved to the left side of the pivot, and all elements greater than the pivot are moved to the right side. 
+The pivot itself will be in its final sorted position. 
 
-In simpler terms, we partition the array into two sub-arrays: elements less than the pivot and elements greater than or equal to the pivot.
+- In simpler terms, we partition the array into two sub-arrays: elements less than the pivot and elements greater than or equal to the pivot.
 Partition the array around the pivot (2): Current order: 6, 4, 8, 10, 2
 
-Now, all elements less than the pivot (2) are on the left, and all elements greater than or equal to the pivot are on the right.
+- Now, all elements less than the pivot (2) are on the left, and all elements greater than or equal to the pivot are on the right.
 
-- Recursion: Recursively apply the above two steps to the sub-arrays on the left and right sides of the pivot. 
+3. Recursion: Recursively apply the above two steps to the sub-arrays on the left and right sides of the pivot. 
+This process continues until each sub-array contains only one element, at which point the array is considered sorted. 
+Follow the steps below:
 
-This process continues until each sub-array contains only one element, at which point the array is considered sorted.
-We do this by recursively apply Quick Sort to the sub-arrays.
-For the left sub-array (elements less than the pivot): 6, 4,
-Choose a pivot (4).
-Partition the sub-array around the pivot (4): 4, 6,
-For the right sub-array (elements greater than or equal to the pivot): 8,10,
-Choose a pivot (10).
-Partition the sub-array around the pivot (10): 8, 10,
+- Recursively apply Quick Sort to the sub-arrays.
+- For the left sub-array (elements less than the pivot): 6, 4,
+- Choose a pivot (4).
+- Partition the sub-array around the pivot (4): 4, 6,
+- For the right sub-array (elements greater than or equal to the pivot): 8,10,
+- Choose a pivot (10).
+- Partition the sub-array around the pivot (10): 8, 10,
 
-- Combining the sub-arrays: As the recursion unwinds, the sub-arrays are combined back to obtain the final sorted array. 
+4. Combining the sub-arrays: As the recursion unwinds, the sub-arrays are combined back to obtain the final sorted array. 
 Since both sub-arrays are now sorted, we combine them with the pivot to get the final sorted array: 4, 6, 8, 10, 2.
 
-- Repeat: We repeat the process recursively for each sub-array until the entire array is sorted.
-For the left sub-array: 4, 6
-For the right sub-array: 8, 10
+5. Repeat: We repeat the process recursively for each sub-array until the entire array is sorted.
+
+- For the left sub-array: 4, 6
+- For the right sub-array: 8, 10
 
 After the final step, the entire array is sorted.
 
@@ -198,4 +224,35 @@ The time complexity of QuickSort is typically expressed in terms of Big O notati
 However, in the worst case, QuickSort's time complexity can degrade to O(n^2), which occurs when the chosen pivot consistently partitions the array into highly imbalanced sub-arrays.
 Nevertheless, various optimizations, like choosing a random pivot or implementing the three-way partitioning scheme, can mitigate this issue and make QuickSort perform well in practice.
 
+## Selection Sort
+
+Selection Sort is a simple sorting algorithm that divides the input array into two parts: the sorted subarray and the unsorted subarray. 
+The algorithm repeatedly selects the smallest (or largest, depending on the desired order) element from the unsorted subarray and swaps it with the element at the beginning of the unsorted subarray. 
+This gradually builds up the sorted subarray until the entire array is sorted.
+
+### Step-by-step explanation of how Selection Sort works:
+
+We will continue with our example of array of numbers that we want to sort in ascending order: 8, 6, 10, 4, 2.   5,3,8,2,1
+
+1. We start with the entire array considered as the unsorted subarray.
+- Find the Minimum: We search the unsorted subarray for the smallest element and swap it with the first element of the array.
+- Find the minimum element (2) in the unsorted subarray.
+- Swap it with the first element (8). 2, 6, 10, 4, 8
+
+2. Find the Minimum in the Remaining Unsorted Subarray: 
+We consider the remaining unsorted subarray and repeat the process of finding the minimum element and swapping it with the first element of the unsorted subarray.
+
+- Find the minimum element (4) in the remaining unsorted subarray.
+- Swap it with the second element (6). 2, 4, 10, 6, 8  
+
+3. Repeat the process for the remaining unsorted subarray.
+
+- Find the minimum element (6) in the remaining unsorted subarray.
+- Swap it with the third element (10). 2, 4, 6, 10, 8
+
+4. Again, repeat the process for the remaining unsorted subarray.
+- Find the minimum element (8) in the remaining unsorted subarray.
+- Swap it with the fourth element (10). 2, 4, 6, 8, 10
+
+After the fourth pass, the entire array is sorted.
 
