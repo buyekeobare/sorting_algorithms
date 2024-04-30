@@ -15,9 +15,19 @@ Now that we understand what sorting is, lets look at sorting algorithm.
 Sorting algorithms are important tools in computer science for rearranging elements in a specific order, such as numerical or lexicographical.
 They are categorized based on their complexity and efficiency, often measured using Big O notation, which describes the worst-case scenario in terms of time or space complexity.
 
-What is Big 0 Notation?
+Now that we have an understanding of Sorting Algorithm, lets go straight to our project and learning objectives.
 
-## Big O Notation
+## Project Learning Objectives
+
+1. What is the Big O notation, and how to evaluate the time complexity of an algorithm
+2. At least four different sorting algorithms
+3. How to select the best sorting algorithm for a given input
+4. What is a stable sorting algorithm
+
+
+## 1. What is the Big O notation, and how to evaluate the time complexity of an algorithm?
+
+### Big O Notation
 
 The 'O' in Big O stands for "order of."
 
@@ -64,32 +74,12 @@ Big O notation is written as O(f(n)), where:
  
 And many more.
 
-## Project tasks
+## 2. Lets explore at least four different sorting algorithms:
 
-For this project we will focus on some of the sorting algorithms as outlined below:
+## 1. Bubble Sort
 
-### Mandatory tasks:
-
-- Bubble Sort
-- Insertion Sort
-- Selection Sort
-- Quick Sort
-
-### Advanced tasks:
-
-- Merge Sort
-- Counting Sort
-- Cocktail Sort
-- Shell Sort
-- Heap Sort
-- Radix Sort
-- Bitonic Sort
-
-Lets explore the mandatory tasks
-
-## Bubble Sort
-
-Bubble sort is a simple sorting algorithm that repeatedly steps through a list of elements to be sorted, compares adjacent elements, and swaps them if they are in the wrong order. This process is repeated until the entire list is sorted. The algorithm gets its name from the way smaller elements "bubble" to the top of the list with each iteration.
+Bubble sort is a simple sorting algorithm that repeatedly steps through a list of elements to be sorted, compares adjacent elements, and swaps them if they are in the wrong order. 
+This process is repeated until the entire list is sorted. The algorithm gets its name from the way smaller elements "bubble" to the top of the list with each iteration.
 
 ### Step-by-step explanation of how bubble sort works:
 
@@ -99,7 +89,8 @@ Bubble sort is a simple sorting algorithm that repeatedly steps through a list o
 If the first element is greater than the second element, swap them. 
 In our example, since 6 is smaller than 8, we swap them. Current order: 6, 8, 10, 4, 2.
 - Move to the next pair of elements (the second and the third i.e 8 and 10) and compare them. 
-Again, swap them if they are in the wrong order, but in our case we don't swap them since they are in the correct order. Current order: 6, 8, 10, 4, 2.
+Aga
+in, swap them if they are in the wrong order, but in our case we don't swap them since they are in the correct order. Current order: 6, 8, 10, 4, 2.
 - Next, we compare 10 and 4. Since 4 is smaller than 10, we swap them. Current order: 6, 8, 4, 10, 2.
 - Finally, we compare 10 and 2. We swap them because 2 is smaller than 10. Current order: 6, 8, 4, 2, 10.
 
@@ -136,7 +127,7 @@ We have learnt in bubble sort sorting algorithm, you repeat the process of compa
 The largest element in the unsorted portion of the list will be at the end of the list.
 
 
-## Insertion Sort
+## 2. Insertion Sort
 
 Insertion Sort is a simple comparison-based sorting algorithm that builds the final sorted array one element at a time. It works by iteratively inserting each element into its correct position within the already sorted portion of the array. It repeats this process until the entire list is sorted.
 
@@ -176,7 +167,7 @@ After the fourth pass, the entire array is sorted.
 We have learnt that in insertion sort-sorting algorithm, we compare the key with each element in the sorted portion of the array, moving elements that are greater than the key one position to the right.
 The process is repeated until you find the correct position for the key or reach the beginning of the sorted portion, then insert the key into its correct position.
 
-## Quick Sort
+## 3. Quick Sort
 
 QuickSort is a widely used sorting algorithm that follows the divide-and-conquer approach. 
 It is known for its efficiency and typically outperforms other sorting algorithms, such as Bubble Sort or Insertion Sort, especially when * dealing with large datasets.
@@ -224,7 +215,7 @@ The time complexity of QuickSort is typically expressed in terms of Big O notati
 However, in the worst case, QuickSort's time complexity can degrade to O(n^2), which occurs when the chosen pivot consistently partitions the array into highly imbalanced sub-arrays.
 Nevertheless, various optimizations, like choosing a random pivot or implementing the three-way partitioning scheme, can mitigate this issue and make QuickSort perform well in practice.
 
-## Selection Sort
+## 4. Selection Sort
 
 Selection Sort is a simple sorting algorithm that divides the input array into two parts: the sorted subarray and the unsorted subarray. 
 The algorithm repeatedly selects the smallest (or largest, depending on the desired order) element from the unsorted subarray and swaps it with the element at the beginning of the unsorted subarray. 
@@ -256,3 +247,14 @@ We consider the remaining unsorted subarray and repeat the process of finding th
 
 After the fourth pass, the entire array is sorted.
 
+## 3. How to select the best sorting algorithm for a given input?
+
+When choosing the best sorting algorithm for a given input, you need to consider factors such as the size of the input, the distribution of elements, and whether the input is already partially sorted. 
+For small input sizes or nearly sorted data, simple algorithms like Insertion Sort or Bubble Sort may perform well due to their low overhead. 
+For larger input sizes, sorting algorithms like Merge Sort or Quick Sort are generally preferred.
+
+## 4. What is a stable sorting algorithm? 
+
+A stable sorting algorithm keeps things in the same order, even if they're the same. So, if you have two things that are equal, the stable sorting makes sure they stay in the same order they were in before sorting. 
+Merge Sort and Insertion Sort are examples of this kind of sorting. 
+Quick Sort, though, doesn't always keep things in the same order if they're equal, but there are ways to make it do that.
