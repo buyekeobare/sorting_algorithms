@@ -1,73 +1,68 @@
-include "sort.h"
+#include "sort.h"
+#include <stdlib.h>
+#include <stdio.h>
 
 /**
- * sub_merge_sort - function to merge sorting algorithm
- * @sub: Array split into sub array.
- * @buffer: Buffer of array.
- * @l: Lowest partition.
- * @mid: Middle partition.
- * @h: Highest partition.
- * Return: Always 0
+ * sort_merge- Sorts and merges the sub-arrays in source
+ * @top: Start index (inclusive) for the left sub-array
+ * @midi: End index (exclusive) for the left sub-array and
+ * start index (inclusive) for the right sub-array
+ * @bottom: End index (exclusive) for the right sub array
+ * @dest: Destination for data
+ * @source: source of data
+ *
+ * Return: void
  */
-void sub_merge_sort(int *sub, int *buffer, size_t l, size_t mid, size_t h)
+void sort_merge(size_t top, size_t midi, size_t bottom, int *dest, int *source)
 {
-	size_t lowest;
-	size_t midd;
-	size_t i = 0;
+	size_t a, b, c;
 
-	printf("Merging...\n[left]: ");
-	print_array(sub + l, mid - l);
-
+	printf("Merging...\n");
+	printf("[left]: ");
+	print_array(source + top, bottom - top);
 	printf("[right]: ");
-	print_array(sub + mid, h - mid);
-
-	for (lowest = l, midd = mid; lowest < mid && midd < h; i++)
+	print_array(source + midi, bottom - midi);
+	a = top;
+	b = midi;
+	for (c = top; c < botom; c++)
 	{
-		if (sub[lowest] < sub[midd])
+		if (a < midi && (b >= bottom || source[a] <= source[b]))
 		{
-			buffer[i] = sub[lowest++];
+			dest[c] = source[a];
+			a++;
 		}
 		else
 		{
-			buffer[i] = sub[midd++];
+			dest[c] = source[b];
+			b++;
 		}
 	}
-	for (; lowest < mid; lowest++)
-	{
-		buffer[i++] = sub[lowest];
-	}
-	for (; midd < h; midd++)
-	{
-		buffer[i++] = sub[midd];
-	}
-	for (lowest = l, i = 0; lowest < h; lowest++)
-	{
-		sub[lowest] = buffer[i++];
-	}
 	printf("[Done]: ");
-	print_array(sub + l, h - l);
+	print_array(dest + top, bottom - top);
 }
 
 /**
- * call_merge_sort - Calls merge sort function.
- * @sub: Sub array to sort.
- * @buffer: Buffer to the array.
- * @l: lowest partition.
- * @h: highest partition.
- * Return: Always 0
+ * split_merge_sort - Recursively splits the array 
+ * and merges the sorted arrays using split merge sort.
+ * @top: Start index (inclusive)
+ * @bottom: End index (exclusive)
+ * @array: Array to sort
+ * @temp_buffer: Copy of the array
+ *
+ * Return: void
  */
-void call_merge_sort(int *sub, int *buffer, size_t l, size_t h)
+void split_merge_sort(size_t top, size_t bottom, int *array, int *temp_buffer)
 {
-	size_t mid;
+	size_t midi;
 
-	if (h - l > 1)
-	{
-		mid = l + (h - l
-    ) / 2;
-		call_merge_sort(sub, buffer, l, mid);
-		call_merge_sort(sub, buffer, mid, h);
-		sub_merge_sort(sub, buffer, l, mid, h);
-	}
+	if (top - bottom < 2)
+		return;
+	midi = (top + bottom) / 2;
+	split_merge_sort(top, midi, array, temp_buffer);
+	split_merge_sort(midi, bottom, array, temp_buffer);
+	sort_merge(top, midi, bottom, array, temp_buffer);
+	for (midi = top; midi < bottom; midi++)
+		temp_buffer[midi] = array[midi];
 }
 
 /**
@@ -79,14 +74,16 @@ void call_merge_sort(int *sub, int *buffer, size_t l, size_t h)
  */
 void merge_sort(int *array, size_t size)
 {
+	size_t i;
 	int *temp_buffer;
 
+	if (array == NULL || size < 2)
+		return;
 	temp_buffer = malloc(sizeof(int) * size);
 	if (temp_buffer == NULL)
 		return;
-
-	call_merge_sort(array, temp_buffer, 0, size);
-
+	for (i = 0; i < size; i++)
+		temp_buffer[i] = array[i];
+	split_merge_sort(0, size, array, temp_buffer);
 	free(temp_buffer);
 }
-
